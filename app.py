@@ -16,7 +16,10 @@ def home():
 def predict():
 	if request.method == 'POST':
 		me = request.form['message']
-		message = [float(x) for x in me.split(",")]
+		try:
+		    message = [float(x) for x in me.split(",")]
+		except:
+			return render_template('result.html',prediction = 1)
 		print(message)
 		print(len(message))
 		vect = np.array(message).reshape(1, -1)
