@@ -20,6 +20,8 @@ def predict():
 		    message = [float(x) for x in me.split(",")]
 		except:
 			return render_template('result.html',prediction = 1)
+		if len(message)!=30:
+			return render_template('result.html',prediction = 1)
 		print(message)
 		print(len(message))
 		vect = np.array(message).reshape(1, -1)
@@ -29,6 +31,3 @@ def predict():
 if __name__ == "__main__":
     app.run()
 
-
-
-	
