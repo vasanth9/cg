@@ -72,11 +72,16 @@ header h1{
       <h2 style="color: red">
           According to our model, this transaction is a Fraud transaction.
       </h2>
+      {% elif prediction == 2 %}
+      <h2 style="color: blue">
+          According to our model, The Data is invalid(not a transaction).
+      </h2>
       {% endif %}
     </div>
     <a href="/">
       <button class="btn-info">Retest</button>
 
     </a>
+    
   </body>
 </html>
